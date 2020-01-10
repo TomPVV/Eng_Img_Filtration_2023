@@ -27,38 +27,64 @@
     </div>
 <!-- Загрузка оригинального фото -->
     <div>
-        <img id="bigImg" src="https://i.imgur.com/X3yf23f.jpg">
+        <img id="bigImg" src="https://i.imgur.com/gd5ZoQS.jpg">
         <ul id="icons">
+		    <li attr-src="https://i.imgur.com/w8a7ZaA.png" onclick="onImageSelect(this)"></li>
             <li attr-src="https://i.imgur.com/gd5ZoQS.jpg" onclick="onImageSelect(this)"></li>
-            <li attr-src="https://i.imgur.com/X3yf23f.jpg" onclick="onImageSelect(this)"></li>
-            <li attr-src="https://i.imgur.com/ll9H6c6.jpg" onclick="onImageSelect(this)"></li>
-            <li attr-src="https://i.imgur.com/nDy7CbE.jpg" onclick="onImageSelect(this)"></li>
+            <li attr-src="https://i.imgur.com/HmUvgB2.jpg" onclick="onImageSelect(this)"></li>
+            <li attr-src="https://i.imgur.com/VAFWDtv.jpg" onclick="onImageSelect(this)"></li>
+            <li attr-src="https://i.imgur.com/xPfXyYm.jpg" onclick="onImageSelect(this)"></li>
+            <li attr-src="https://i.imgur.com/PF26LAs.jpg" onclick="onImageSelect(this)"></li>
             <li attr-src="https://i.imgur.com/ari6Oae.jpg" onclick="onImageSelect(this)"></li>
+			
         </ul>
         <input type="file" id="file">
     </div>
 
-    <div id="text">
-        <p>Зашумлення фотографії </p>
-    </div>
+		
 	
-<!--Первый canvas-->
-    <div class="bg">
-        <canvas id="canvas1"></canvas>
-    </div>
+	<div id="wrapper_coment">
 	
-    <div style="float: left">
-        <button id="reset">reset</button>
-		<div class="clear"> </div>	
-		<button id="sepia" >sepia</button>
-        <div id="buttons"></div>
-    </div>
+	    <div id="sidebarL">
 	
-    <pre id="fn" style="float: left"></pre>
-	<div class="clear"> </div>
+          <div id="text">
+            <p>Зашумлення зображення </p>
+          </div>
+	
+        <!--Первый canvas-->
+          <div class="bg">
+            <canvas id="canvas1"></canvas>
+	      </div>
+	
+          <div style_="float: left">
+            <button id="reset">"Очистити"</button>
+		    <div class="clear_"> </div>
+		    <button id="sepia" >"Сепія"</button>
+            <div id="buttons"></div>
+          </div>
+	
+	
+	
+
+	  
+	    </div>
+	  
+	  <div id="sidebarR"> 
+	  
+	  </div>
+	  
+	  <div class="clear"> </div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
 	
 	<div id="text">
-        <p>Фільтрація фотографії з шумом типу "Сіль" </p>
+        <p>Фільтрація зображення з шумом типу "Сіль" </p>
     </div>
 	
 <!--Второй canvas-->	
@@ -68,25 +94,31 @@
 	
 <!--Кнопки очистки вторго полотна, загрузки фото из первого полотна, реализация Медианной фильтрации 1,  реализация Медианной фильтрации 2 и НОВОЙ фильтрации-->		
 	<div style="float: left"  >
-	   <button id="reset_canv2">Clear</button> 
-	   <button id="img_upload2">Image_upload</button>
+	   <button id="reset_canv2">Очистити</button> 
+	   <button id="img_upload2">Завантажити</button>
        <div class="clear"> </div>	
 	   <div>  .</div>
-	   <button id="med_filtration_1_salt" >Median_filtr_4</button>
+	   <button id="med_filtration_1_salt" >Медіанний фільтр "4"</button>
 	   <div class="clear"> </div>	
-	   <button id="med_filtration_2_salt">Median_filtr_8</button>
+	   <button id="med_filtration_2_salt">Медіанний фільтр "8"</button>
 	   <div class="clear"> </div>	   
 	   
 	   <form name="forma1">
-			<input type="button" name="button" value="МНКР_1" onClick="basenew_filtr_1_salt(forma1);">
-			<input type="text" name="num_pix_11" placeholder="1-255" size="5"><br>
+			<input type="button" name="button" value="МНКР 1" onClick="basenew_filtr_1_salt(forma1);">
+			<input type="text" name="num_pix_11" placeholder="1...255" size="5"><br>
 			
-			<input type="button" name="button" value="МНКР_3" onClick="basenew_filtr_2_salt(forma1);">
-			<input type="text" name="num_pix_21" placeholder="1-255" size="5"><br>
+			<input type="button" name="button" value="МНКР 3" onClick="basenew_filtr_2_salt(forma1);">
+			<input type="text" name="num_pix_21" placeholder="1...255" size="5"><br>
+			
+			<b>Кількість сусідніх пікселів фільтрації:</b>
+			<input name="neighbor" type="radio" value="4" > 4
+            <input name="neighbor" type="radio" value="8"checked> 8
+			<br><b>для МНКР</b>
+			
 	  </form>
 	  
 	 <!-- Форма визуализации эффективности  --> 
-	 <div id="text_progress">
+	 <div id="text_progress_5">
         <form name="forma_effect_salt">
 			Ефективність фільтрації <br> <input type="text" name="result_1" size="8">
 		</form>
@@ -111,7 +143,7 @@
 	<div class="clear"> </div>
 	
 	<div id="text">
-        <p>Фільтрація фотографії з шумом типу "Перець" </p>
+        <p>Фільтрація зображення з шумом типу "Перець" </p>
     </div>
 	
 	<!--Третій canvas-->	
@@ -121,28 +153,34 @@
 	
 <!--Кнопки очистки третьего полотна, загрузки фото из первого полотна, реализация Медианной фильтрации 1,  реализация Медианной фильтрации 2 и НОВОЙ фильтрации-->		
 	<div style="float: left"  >
-	   <button id="reset_canv3">Clear</button> 
-	   <button id="img_upload3">Image_upload</button>
+	   <button id="reset_canv3">Очистити</button> 
+	   <button id="img_upload3">Завантажити</button>
        <div class="clear"> </div>	
 	   <div>  .</div>
-	   <button id="med_filtration_1_pepper" >Median_filtr_4</button>
+	   <button id="med_filtration_1_pepper" >Медіанний фільтр "4"</button>
 	   <div class="clear"> </div>	
-	   <button id="med_filtration_2_pepper">Median_filtr_8</button>
+	   <button id="med_filtration_2_pepper">Медіанний фільтр "8"</button>
 	   <div class="clear"> </div>
 <!--	   <button id="new_filtr">NEW_filtr</button>
 	   <input type="text" name="num_pix" size="20">	
 -->		   
 	   <form name="forma2">
-			<input type="button" name="button" value="МНКР_1" onClick="basenew_filtr_1_pepper(forma2);">
-			<input type="text" name="num_pix_12" placeholder="1-255" size="5"><br>
+			<input type="button" name="button" value="МНКР 1" onClick="basenew_filtr_1_pepper(forma2);">
+			<input type="text" name="num_pix_12" placeholder="1...255" size="5"><br>
 			
 			
-			<input type="button" name="button" value="МНКР_3" onClick="basenew_filtr_2_pepper(forma2);">
-			<input type="text" name="num_pix_22" placeholder="1-255" size="5"><br>
+			<input type="button" name="button" value="МНКР 3" onClick="basenew_filtr_2_pepper(forma2);">
+			<input type="text" name="num_pix_22" placeholder="1...255" size="5"><br>
+			
+			<b>Кількість сусідніх пікселів фільтрації:</b>
+			<input name="neighbor" type="radio" value="4" > 4
+            <input name="neighbor" type="radio" value="8"checked> 8
+			<br><b>для МНКР</b>
+			
 	  </form>
 	 
 <!-- Форма визуализации эффективности  --> 
-	 <div id="text_progress">
+	 <div id="text_progress_5">
         <form name="forma_effect_pepper">
 			Ефективність фільтрації <br> <input type="text" name="result_2" size="8">
 		</form>
@@ -163,7 +201,7 @@
 	<div class="clear"> </div>
 	
 <div id="text">
-        <p>Фільтрація фотографії з шумом типу "Градації сірого" </p>
+        <p>Фільтрація зображення з шумом типу "Градації сірого" </p>
     </div>
 	
 	<!--Четвертий canvas-->	
@@ -173,28 +211,36 @@
 	
 <!--Кнопки очистки третьего полотна, загрузки фото из первого полотна, реализация Медианной фильтрации 1,  реализация Медианной фильтрации 2 и НОВОЙ фильтрации-->		
 	<div style="float: left"  >
-	   <button id="reset_canv4">Clear</button> 
-	   <button id="img_upload4">Image_upload</button>
+	   <button id="reset_canv4">Очистити</button> 
+	   <button id="img_upload4">Завантажити</button>
        <div class="clear"> </div>	
 	   <div>  .</div>
-	   <button id="med_filtration_1_gray" >Median_filtr_4</button>
+	   <button id="med_filtration_1_gray" >Медіанний фільтр "4"</button>
 	   <div class="clear"> </div>	
-	   <button id="med_filtration_2_gray">Median_filtr_8</button>
+	   <button id="med_filtration_2_gray">Медіанний фільтр "8"</button>
 	   <div class="clear"> </div>
 <!--	   <button id="new_filtr">NEW_filtr</button>
 	   <input type="text" name="num_pix" size="20">	
 -->		   
 	   
 	   <form name="forma3">
-			<input type="button" name="button" value="МНКР_1" onClick="basenew_filtr_1_gray(forma3);">
-			<input type="text" name="num_pix_13" placeholder="1-500" size="5"><br>
+			<input type="button" name="button" value="МНКР 1" onClick="basenew_filtr_1_gray(forma3);">
+			<input type="text" name="num_pix_13" placeholder="1...500" size="5"><br>
 				
-			<input type="button" name="button" value="МНКР_3" onClick="basenew_filtr_2_gray(forma3);">
-			<input type="text" name="num_pix_23" placeholder="1-500" size="5"><br>
+			<input type="button" name="button" value="МНКР 3" onClick="basenew_filtr_2_grayy(forma3);">
+			<input type="text" name="num_pix_23" placeholder="1...500" size="5"><br>
+			
+			
+			<b>Кількість сусідніх пікселів фільтрації:</b>
+			<input name="neighbor" type="radio" value="4" > 4
+            <input name="neighbor" type="radio" value="8"checked> 8
+			<br><b>для МНКР</b>
+			
+			
 	  </form>
 	  
 	  <!-- Форма визуализации эффективности  --> 
-	 <div id="text_progress">
+	 <div id="text_progress_5">
         <form name="forma_effect_gray">
 			Ефективність фільтрації <br> <input type="text" name="result_3" size="8">
 		</form>
@@ -214,6 +260,85 @@
     <pre id="fn2" style="float: left"></pre>
 	<div class="clear"> </div>
 	
+	<div id="text">
+        <p>Фільтрація зображення з шумом типу "Гранулярний шум" </p>
+    </div>
+	
+	<!--Пятий canvas-->	
+	<div class="bg">
+        <canvas id="canvas5"></canvas>
+    </div>
+	
+<!--Кнопки очистки полотна, загрузки фото из первого полотна, реализация Медианной фильтрации 1,  реализация Медианной фильтрации 2 и НОВОЙ фильтрации-->		
+	<div style="float: left"  >
+	   <button id="reset_canv5">Очистити</button> 
+	   <button id="img_upload5">Завантажити</button>
+       <div class="clear"> </div>	
+	   <div>  .</div>
+	   <button id="med_filtration_1_smooth" >Медіанний фільтр "4"</button>
+	   <div class="clear"> </div>	
+	   <button id="med_filtration_2_smooth">Медіанний фільтр "8"</button>
+	   <div class="clear"> </div>   
+	   
+	   <form  name="forma5">
+			<input type="button" name="button" value="МНКР+" onClick="basenew_filtr_smooth(forma5);">
+			<input type="text" name="amplitude" placeholder="Amplitude: -255...255" size="15">
+			<br><br>
+			<b>Кількість сусідніх пікселів фільтрації:</b>
+			<input name="neighbor" type="radio" value="4" > 4
+            <input name="neighbor" type="radio" value="8"checked> 8
+			<br><br>
+			<b>Глибина фільтрації (обрати зі списку):</b>
+        <select  name="num_pix_5"  >
+          <option disabled>Level filtration</option>
+          <option value="1">1</option>
+          <option selected value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+		  <option value="5">5</option>
+		  <option value="6">6</option>
+          <option value="7">7</option>
+		  <option value="8">8</option>
+		  <option value="9">9</option>
+		  <option value="10">10</option>
+		  <option value="11">11</option>
+          <option value="12">12</option>
+		  <option value="13">13</option>
+		  <option value="14">14</option>
+		  <option value="15">15</option>
+        </select>
+      <br><br><b>Знак фільтрації:
+	        <input name="sign" type="radio" value="-1" checked> "-"
+            <input name="sign" type="radio" value="1"> "+"
+			<input name="sign" type="radio" value="0"> "+/-" </b>
+		<!-- 		
+			<input type="button" name="button" value="МНКР_3" onClick="basenew_filtr_2_gray(forma5);">
+			<input type="text" name="num_pix_5" placeholder="1-5" size="5"><br> 
+			--> 
+			
+	  </form>
+	  
+	  <!-- Форма визуализации эффективности  
+	 <div id="text_progress_5">
+        <form name="forma_effect_smooth">
+			Ефективність фільтрації <br> <input type="text" name="result_5" size="8">
+		</form>
+	 </div>
+	 --> 
+	 
+	 <!-- Прогресс-бар  --> 
+	  <div id="text_progress_5">
+        Progress Bar 
+      </div>
+	  
+	   <div id="myProgress_5">
+       <div id="myBar_5">0%</div>
+       </div>  
+	  
+    </div>
+	
+    <pre id="fn2" style="float: left"></pre>
+	<div class="clear"> </div>
 	
 <script>
     function CanvasImage(canvas, src) {
@@ -225,10 +350,13 @@
         i.onload = function(){
             canvas.width = i.width;
             canvas.height = i.height;
+			window.original_width = canvas.width; 
+			window.original_height = canvas.height; 
             context.drawImage(i, 0, 0, i.width, i.height);
 
             // remember the original pixels
             that.original = that.getData();
+		    window.origin_image = that.original;
         };
         i.src = src;
 
@@ -269,12 +397,12 @@
 // noise Зашумление ЦВЕТНОГО фото
     var manipulators = [
         {
-            name: 'noise (0 - 100%)', 
+            name: '"Шум" (0 - 100%)', 
             cb: function(r, g, b, a, factor) {
                 var rand =  (0.5 - Math.random()) * factor*20;
                 return [r + rand, g + rand, b + rand, 255];
             },
-            factor: 100
+            factor: '1...100'
 			
         }
     ];
@@ -282,7 +410,7 @@
 	// new salt Зашумление ч/б фото БЕЛЫМИ пикселями
 	var manipulators_white = [   
         {   
-            name: 'salt (0 - 100%)', 
+            name: '"Сіль" (0 - 100%)', 
             cb: function(r, g, b, a, factor) {
 			     var avg = 0.3  * r + 0.59 * g + 0.11 * b;
 				 if(Math.random()>(1- factor/100))
@@ -293,14 +421,14 @@
 							return [avg , avg , avg , 255];
 							}
             },
-            factor: 100		                       
+            factor: '1...100'	                       
         }	                          
     ];
 	
 	// new pepper Зашумление  ч/б фото ЧЕРНЫМИ пикселями
 	var manipulators_black = [
         {   
-            name: 'pepper (0 - 100%)', 
+            name: '"Перець" (0 - 100%)', 
             cb: function(r, g, b, a, factor) {
 			     var avg = 0.3  * r + 0.59 * g + 0.11 * b;
 				 if(Math.random()>(1- factor/100))
@@ -311,14 +439,14 @@
 							return [avg , avg , avg , 255];
 							}
             },
-            factor: 100	                       
+            factor: '1...100'	                       
         }	                          
     ];
 	
     // new gray Зашумление  ч/б фото СЕРЫМИ пикселями
 	var manipulators_gray = [
         {
-            name: 'gray (0 - 100%)',			
+            name: '"Градації сірого" (0 - 100%)',			
             cb: function(r, g, b, a, factor) {
 			    var avg = 0.3  * r + 0.59 * g + 0.11 * b;
 				if(Math.random()>(1- factor/100)) 
@@ -329,7 +457,7 @@
 							return [avg , avg , avg , 255];
 							}
 				},
-            factor: 100
+            factor: '1...100'
         }
     ];
 	
@@ -356,6 +484,7 @@
             $('canvas1'),
             srcOrData
         );
+		
     };
 	
     function $(id) {return document.getElementById(id)}
@@ -516,6 +645,9 @@
 	ctx_2.height = window.innerWidth;
 	
 	$('img_upload2').onclick = function(){
+	//*
+	readdata_canv(canvas1);
+	
 	const im2 = document.getElementById("canvas1");
     rebuildCanvas2(im2.toDataURL(0,9));
     };
@@ -545,6 +677,9 @@
 	ctx_3.height = window.innerWidth;
 	
 	$('img_upload3').onclick = function(){
+	//*
+	readdata_canv(canvas1);
+	
 	const im3 = document.getElementById("canvas1");
     rebuildCanvas3(im3.toDataURL(0,9));
     };
@@ -573,6 +708,9 @@
 	ctx_4.height = window.innerWidth;
 	
 	$('img_upload4').onclick = function(){
+	//*
+	readdata_canv(canvas1);
+	
 	const im4 = document.getElementById("canvas1");
     rebuildCanvas4(im4.toDataURL(0,9));
     };
@@ -583,6 +721,37 @@
     elem_3.style.width = 1 + "%";
 	elem_3.innerHTML = 0  + "%";
 	effective_3(forma_effect_gray, imageData_0_copy, imageData_0_copy);
+    };
+</script>	
+
+<!--**** Завантаження данних в Canvas5  SMOOTH_FUNCTION **** -->
+<script>	
+    function rebuildCanvas5(srcOrData) {
+        window.transformer = new CanvasImage(
+            $('canvas5'),
+            srcOrData
+        );
+    };
+
+	canv_5 = document.getElementById("canvas5");
+	ctx_5 = canv_5.getContext('2d');
+	ctx_5.width = window.innerWidth;
+	ctx_5.height = window.innerWidth;
+	
+	$('img_upload5').onclick = function(){
+	//*
+	readdata_canv(canvas1);
+	
+	const im5 = document.getElementById("canvas1");
+    rebuildCanvas5(im5.toDataURL(0,9));
+    };
+	
+	$('reset_canv5').onclick = function(){
+	ctx_5.clearRect(0, 0, ctx_5.width, ctx_5.height);
+	elem_5 = document.getElementById("myBar_5"); 
+    elem_5.style.width = 1 + "%";
+	elem_5.innerHTML = 0  + "%";
+	effective_5(forma_effect_smooth, imageData_0_copy, imageData_0_copy);
     };
 </script>	
 
@@ -622,6 +791,18 @@ function effective_3(obj1, obj2, obj3) {
     res = Math.sqrt(sum/pixels_origion.length); 
 	obj1.result_3.value = res.toFixed(6);
 }	
+
+function effective_5(obj1, obj2, obj3) {
+    pixels_origion = obj2;
+	pixels_filtered = obj3;
+    sum = 0;
+    for (k = 0; k < pixels_origion.length; k += 1)     {
+	   sum = sum + Math.pow(pixels_origion[k] - pixels_filtered[k], 2);
+	}
+    res = Math.sqrt(sum/pixels_origion.length); 
+	obj1.result_5.value = res.toFixed(6);
+}
+
 // Вызов первого (I) медианного фильтра для ВТОРОГО canvas	
 	$('med_filtration_1_salt').onclick = function(){
 	elem = document.getElementById("myBar_1");
@@ -682,6 +863,7 @@ function effective_3(obj1, obj2, obj3) {
     function basenew_filtr_1_salt (obj) {
 	elem = document.getElementById("myBar_1");
 	number = obj.num_pix_11.value;
+	neighbor_filtr = obj.neighbor.value;
 //	$('new_filtr').onclick = function(){
 // Считывание данных с 	canvas1
 	canv_1 = document.getElementById("canvas1");
@@ -693,7 +875,7 @@ function effective_3(obj1, obj2, obj3) {
     imageData = ctx_1.getImageData(0, 0, ctx_1.width, ctx_1.height); 
 	
 //  ************** Обработка массива *************
-    imageDataFiltered = new_filtr_salt(imageData, number, elem);
+    imageDataFiltered = new_filtr_salt(imageData, number, elem, neighbor_filtr);
 	
 	//  Запуск функции расчета эффективности
 	effective_1(forma_effect_salt, imageData_0_copy, imageDataFiltered.data);
@@ -707,6 +889,7 @@ function effective_3(obj1, obj2, obj3) {
     function basenew_filtr_2_salt (obj) {
 	elem = document.getElementById("myBar_1");
 	number = obj.num_pix_21.value;
+	neighbor_filtr = obj.neighbor.value;
 //	$('new_filtr').onclick = function(){
 // Считывание данных с 	canvas1
 	canv_1 = document.getElementById("canvas1");
@@ -718,9 +901,9 @@ function effective_3(obj1, obj2, obj3) {
     imageData = ctx_1.getImageData(0, 0, ctx_1.width, ctx_1.height); 
 	
 //  ************** Обработка массива 3 раза *************
-    imageDataFiltered_0 = new_filtr_salt(imageData, number, elem);
-	imageDataFiltered_1 = new_filtr_salt(imageDataFiltered_0, number, elem);
-	imageDataFiltered = new_filtr_salt(imageDataFiltered_1, number, elem);
+    imageDataFiltered_0 = new_filtr_salt(imageData, number, elem, neighbor_filtr);
+	imageDataFiltered_1 = new_filtr_salt(imageDataFiltered_0, number, elem, neighbor_filtr);
+	imageDataFiltered = new_filtr_salt(imageDataFiltered_1, number, elem, neighbor_filtr);
 	
 	//  Запуск функции расчета эффективности
 	effective_1(forma_effect_salt, imageData_0_copy, imageDataFiltered.data);
@@ -784,6 +967,7 @@ function effective_3(obj1, obj2, obj3) {
     function basenew_filtr_1_pepper (obj) {
 	elem = document.getElementById("myBar_2");
 	number = obj.num_pix_12.value;
+	neighbor_filtr = obj.neighbor.value;
 //	$('new_filtr').onclick = function(){
 // Считывание данных с 	canvas1
 	canv_1 = document.getElementById("canvas1");
@@ -795,7 +979,7 @@ function effective_3(obj1, obj2, obj3) {
     imageData = ctx_1.getImageData(0, 0, ctx_1.width, ctx_1.height); 
 	
 //  ************** Обработка массива *************
-    imageDataFiltered = new_filtr_pepper(imageData, number, elem);
+    imageDataFiltered = new_filtr_pepper(imageData, number, elem, neighbor_filtr);
 	
 //  Запуск функции расчета эффективности
 	effective_2(forma_effect_pepper, imageData_0_copy, imageDataFiltered.data);	
@@ -811,6 +995,7 @@ function effective_3(obj1, obj2, obj3) {
     function basenew_filtr_2_pepper (obj) {
 	elem = document.getElementById("myBar_2");
 	number = obj.num_pix_22.value;
+	neighbor_filtr = obj.neighbor.value;
 //	$('new_filtr').onclick = function(){
 // Считывание данных с 	canvas1
 	canv_1 = document.getElementById("canvas1");
@@ -822,9 +1007,9 @@ function effective_3(obj1, obj2, obj3) {
     imageData = ctx_1.getImageData(0, 0, ctx_1.width, ctx_1.height); 
 	
 //  ************** Обработка массива 3 раза *************
-    imageDataFiltered_0 = new_filtr_pepper(imageData, number, elem);
-	imageDataFiltered_1 = new_filtr_pepper(imageDataFiltered_0, number, elem);
-	imageDataFiltered = new_filtr_pepper(imageDataFiltered_1, number, elem);
+    imageDataFiltered_0 = new_filtr_pepper(imageData, number, elem, neighbor_filtr);
+	imageDataFiltered_1 = new_filtr_pepper(imageDataFiltered_0, number, elem, neighbor_filtr);
+	imageDataFiltered = new_filtr_pepper(imageDataFiltered_1, number, elem, neighbor_filtr);
 	
 	//  Запуск функции расчета эффективности
 	effective_2(forma_effect_pepper, imageData_0_copy, imageDataFiltered.data);	
@@ -888,6 +1073,7 @@ function effective_3(obj1, obj2, obj3) {
     function basenew_filtr_1_gray (obj) {
 	elem = document.getElementById("myBar_3");
 	number = obj.num_pix_13.value;
+	neighbor_filtr = obj.neighbor.value;
 //	$('new_filtr').onclick = function(){
 // Считывание данных с 	canvas1
 	canv_1 = document.getElementById("canvas1");
@@ -899,7 +1085,7 @@ function effective_3(obj1, obj2, obj3) {
     imageData = ctx_1.getImageData(0, 0, ctx_1.width, ctx_1.height); 
 	
 //  ************** Обработка массива *************
-    imageDataFiltered = new_filtr_gray(imageData, number, elem);
+    imageDataFiltered = new_filtr_gray(imageData, number, elem, neighbor_filtr);
 	
 //  Запуск функции расчета эффективности
 	effective_3(forma_effect_gray, imageData_0_copy, imageDataFiltered.data);	
@@ -909,11 +1095,12 @@ function effective_3(obj1, obj2, obj3) {
 	rebuildCanvas4(ctx_4.toDataURL(0,9));
 	};
 	
-	
+		
 	// Вызов нового авторского (NEW) фильтра типа "GRAY" 3 раза
-    function basenew_filtr_2_gray (obj) {
+    function basenew_filtr_2_grayy (obj) {
 	elem = document.getElementById("myBar_3");
 	number = obj.num_pix_23.value;
+	neighbor_filtr = obj.neighbor.value;
 //	$('new_filtr').onclick = function(){
 // Считывание данных с 	canvas1
 	canv_1 = document.getElementById("canvas1");
@@ -925,9 +1112,9 @@ function effective_3(obj1, obj2, obj3) {
     imageData = ctx_1.getImageData(0, 0, ctx_1.width, ctx_1.height); 
 	
 //  ************** Обработка массива 3 раза *************
-    imageDataFiltered_0 = new_filtr_gray(imageData, number, elem);
-	imageDataFiltered_1 = new_filtr_gray(imageDataFiltered_0, number, elem);
-	imageDataFiltered = new_filtr_gray(imageDataFiltered_1, number, elem);
+    imageDataFiltered_0 = new_filtr_gray(imageData, number, elem, neighbor_filtr);
+	imageDataFiltered_1 = new_filtr_gray(imageDataFiltered_0, number, elem, neighbor_filtr);
+	imageDataFiltered = new_filtr_gray(imageDataFiltered_1, number, elem, neighbor_filtr);
 	
 //  Запуск функции расчета эффективности
 	effective_3(forma_effect_gray, imageData_0_copy, imageDataFiltered.data);	
@@ -937,6 +1124,122 @@ function effective_3(obj1, obj2, obj3) {
 	rebuildCanvas4(ctx_4.toDataURL(0,9));
 	};
 </script>
+
+<!-- ************** ПОДКЛЮЧЕНТЕ К ФИЛЬТРАЦИИ V (пятого) Canvas SMOOTH FUNCTION****************** -->
+<script>	
+// Вызов первого (I) медианного фильтра для V canvas	
+	$('med_filtration_1_smooth').onclick = function(){
+	elem = document.getElementById("myBar_5");
+// Считывание данных с 	canvas1
+	canv_1 = document.getElementById("canvas1");
+	ctx_1 = canv_1.getContext('2d');
+	ctx_1.width = window.innerWidth;
+	ctx_1.height = window.innerWidth;
+
+// Запись данных в массив imageData	
+    imageData = ctx_1.getImageData(0, 0, ctx_1.width, ctx_1.height); 
+	
+//  Обработка массива
+    imageDataFiltered = median_filtr_1(imageData, elem);
+	
+//  Запуск функции расчета эффективности
+//*	effective_5(forma_effect_smooth, imageData_0_copy, imageDataFiltered.data);	
+
+	
+//  Запись отфильтрованных данных в canvas2
+	ctx_5.putImageData(imageDataFiltered, 0, 0);
+	rebuildCanvas5(ctx_5.toDataURL(0,9));
+	};
+
+// Вызов вторго (II) медианного фильтра для V canvas		
+	$('med_filtration_2_smooth').onclick = function(){
+	elem = document.getElementById("myBar_5");
+// Считывание данных с 	canvas1
+	canv_1 = document.getElementById("canvas1");
+	ctx_1 = canv_1.getContext('2d');
+	ctx_1.width = window.innerWidth;
+	ctx_1.height = window.innerWidth;
+
+// Запись данных в массив imageData	
+    imageData = ctx_1.getImageData(0, 0, ctx_1.width, ctx_1.height); 
+	
+//  Обработка массива
+    imageDataFiltered = median_filtr_2(imageData, elem);
+
+//  Запуск функции расчета эффективности
+//*	effective_5(forma_effect_smooth, imageData_0_copy, imageDataFiltered.data);	
+	
+//  Запись отфильтрованных данных в canvas5
+	ctx_5.putImageData(imageDataFiltered, 0, 0);
+	rebuildCanvas5(ctx_5.toDataURL(0,9));
+	};
+
+// Вызов нового авторского(NEW) фильтра типа "SMOOTH" 1 раз
+    function basenew_filtr_smooth (obj) {
+	elem = document.getElementById("myBar_5");
+	number = obj.amplitude.value;
+    number_pix = obj.num_pix_5.value;
+	sign_filtr = obj.sign.value;
+	neighbor_filtr = obj.neighbor.value;
+// Считывание данных с 	canvas1
+	canv_1 = document.getElementById("canvas1");
+	ctx_1 = canv_1.getContext('2d');
+	ctx_1.width = window.innerWidth;
+	ctx_1.height = window.innerWidth;
+
+//    alert('In Function');
+ //   alert(window.original_width);
+ //   alert(window.original_height);
+    
+	
+// Запись данных в массив imageData	
+//   imageData = ctx_1.getImageData(0, 0, ctx_1.width, ctx_1.height); 
+	 imageData = window.origin_image;
+//  ************** Обработка массива *************
+    imageDataFiltered = new_filtr_smooth(imageData, number, elem, number_pix, sign_filtr, neighbor_filtr);
+
+//  Запуск функции расчета эффективности
+//	effective_5(forma_effect_smooth, imageData_0_copy, imageDataFiltered.data);	
+//*    effective_5(forma_effect_smooth, window.origin_image.data, imageDataFiltered.data);	
+    
+	
+//  Запись отфильтрованных данных в canvas5
+	ctx_5.putImageData(imageDataFiltered, 0, 0);
+	rebuildCanvas5(ctx_5.toDataURL(0,9));
+	};
+	
+	
+	// Вызов нового авторского (NEW) фильтра типа "SMOOTH" 3 раза
+    function basenew_filtr_2_gray (obj) {
+	elem = document.getElementById("myBar_5");
+	number = obj.num_pix_5.value;
+//	$('new_filtr').onclick = function(){
+// Считывание данных с 	canvas1
+	canv_1 = document.getElementById("canvas1");
+	ctx_1 = canv_1.getContext('2d');
+	ctx_1.width = window.innerWidth;
+	ctx_1.height = window.innerWidth;
+
+// Запись данных в массив imageData	
+    imageData = ctx_1.getImageData(0, 0, ctx_1.width, ctx_1.height); 
+	
+//  ************** Обработка массива 3 раза *************
+    imageDataFiltered_0 = new_filtr_smooth(imageData, number, elem, number_pix);
+	imageDataFiltered_1 = new_filtr_smooth(imageDataFiltered_0, number, elem, number_pix);
+	imageDataFiltered = new_filtr_smooth(imageDataFiltered_1, number, elem, number_pix);
+	
+//  Запуск функции расчета эффективности
+	effective_5(forma_effect_smooth, imageData_0_copy, imageDataFiltered.data);	
+	
+//  Запись отфильтрованных данных в canvas2
+	ctx_5.putImageData(imageDataFiltered, 0, 0);
+	rebuildCanvas5(ctx_5.toDataURL(0,9));
+	};
+</script>
+
+
+
+
 
 
 <!-- ************** МЕДИАННЫЕ ФУНКЦИИ ФИЛЬТРАЦИИ ****************** -->
@@ -1027,8 +1330,8 @@ var median_filtr_2 = function (imageData, elem) {
 
 <!-- ************** АВТОРСКИЕ ФУНКЦИИ ФИЛЬТРАЦИИ ****************** -->
 <script>
-// ----- ФУНКЦИЯ ФИЛЬТРАЦИИ 3 ТИПА "SALT" на 8 ячеек ------
-var new_filtr_salt = function (imageData, number, elem) {
+// ----- ФУНКЦИЯ ФИЛЬТРАЦИИ 3 ТИПА "SALT" на 4/8 ячеек ------
+var new_filtr_salt = function (imageData, number, elem, neighbor_filtr) {
 // получаем одномерный массив, описывающий все пиксели изображения
    var pixels = imageData.data;
    var pixels_new = pixels;
@@ -1043,10 +1346,15 @@ var new_filtr_salt = function (imageData, number, elem) {
 	  // if (one == 0)
 	  one = -1;
     //Определение суммы отклонения значения пикселя от значений его соседей
-	    old_delta_r = Math.abs(pixels[k]-pixels[(k-4)]) + Math.abs(pixels[k]-pixels[(k+4)]) + Math.abs(pixels[k]-pixels[(k-n)]) + Math.abs(pixels[k]-pixels[(k+n)]) + Math.abs(pixels[k]-pixels[(k-n)-4])+ Math.abs(pixels[k]-pixels[(k-n)+4])+ Math.abs(pixels[k]-pixels[(k+n)-4])+ Math.abs(pixels[k]-pixels[(k+n)+4]);
-		rnd = pixels[k] + one; 
-		new_delta_r = Math.abs(rnd-pixels[(k-4)]) + Math.abs(rnd-pixels[(k+4)]) + Math.abs(rnd-pixels[(k-n)]) + Math.abs(rnd - pixels[(k+n)]) + Math.abs(rnd - pixels[(k-n)-4]) + Math.abs(rnd - pixels[(k-n)+4]) + Math.abs(rnd - pixels[(k+n)-4]) + Math.abs(rnd - pixels[(k+n)+4]);
-		if(new_delta_r < old_delta_r) {pixels_new[k] = rnd} else  {
+	   if (neighbor_filtr==4) {old_delta_r = Math.abs(pixels[k]-pixels[(k-4)]) + Math.abs(pixels[k]-pixels[(k+4)]) + Math.abs(pixels[k]-pixels[(k-n)]) + Math.abs(pixels[k]-pixels[(k+n)]);
+	    } else old_delta_r = Math.abs(pixels[k]-pixels[(k-4)]) + Math.abs(pixels[k]-pixels[(k+4)]) + Math.abs(pixels[k]-pixels[(k-n)]) + Math.abs(pixels[k]-pixels[(k+n)]) + Math.abs(pixels[k]-pixels[(k-n)-4])+ Math.abs(pixels[k]-pixels[(k-n)+4])+ Math.abs(pixels[k]-pixels[(k+n)-4])+ Math.abs(pixels[k]-pixels[(k+n)+4]);
+	    rnd = pixels[k] + one; 
+		
+		if (neighbor_filtr==4) {new_delta_r = Math.abs(rnd-pixels[(k-4)]) + Math.abs(rnd-pixels[(k+4)]) + Math.abs(rnd-pixels[(k-n)]) + Math.abs(rnd - pixels[(k+n)]);
+		} else new_delta_r = Math.abs(rnd-pixels[(k-4)]) + Math.abs(rnd-pixels[(k+4)]) + Math.abs(rnd-pixels[(k-n)]) + Math.abs(rnd - pixels[(k+n)]) + Math.abs(rnd - pixels[(k-n)-4]) + Math.abs(rnd - pixels[(k-n)+4]) + Math.abs(rnd - pixels[(k+n)-4]) + Math.abs(rnd - pixels[(k+n)+4]);
+		
+
+        if(new_delta_r < old_delta_r) {pixels_new[k] = rnd} else  {
 		                                                             pixels_new[k] = pixels[k];
 																	 break;
 																  };
@@ -1096,8 +1404,8 @@ var new_filtr_salt = function (imageData, number, elem) {
 </script>
 
 <script>
-// ----- ФУНКЦИЯ ФИЛЬТРАЦИИ 3 ТИПА "PEPPER" на 8 ячеек ------
-var new_filtr_pepper = function (imageData, number, elem) {
+// ----- ФУНКЦИЯ ФИЛЬТРАЦИИ 3 ТИПА "PEPPER" на 4/8 ячеек ------
+var new_filtr_pepper = function (imageData, number, elem, neighbor_filtr) {
 // получаем одномерный массив, описывающий все пиксели изображения
    var pixels = imageData.data;
    var pixels_new = pixels;
@@ -1113,9 +1421,13 @@ var new_filtr_pepper = function (imageData, number, elem) {
 	  one = 1;
 	 
     //Определение суммы отклонения значения пикселя от значений его соседей
-	    old_delta_r = Math.abs(pixels[k]-pixels[(k-4)]) + Math.abs(pixels[k]-pixels[(k+4)]) + Math.abs(pixels[k]-pixels[(k-n)]) + Math.abs(pixels[k]-pixels[(k+n)]) + Math.abs(pixels[k]-pixels[(k-n)-4])+ Math.abs(pixels[k]-pixels[(k-n)+4])+ Math.abs(pixels[k]-pixels[(k+n)-4])+ Math.abs(pixels[k]-pixels[(k+n)+4]);
-		rnd = pixels[k] + one; 
-		new_delta_r = Math.abs(rnd-pixels[(k-4)]) + Math.abs(rnd-pixels[(k+4)]) + Math.abs(rnd-pixels[(k-n)]) + Math.abs(rnd - pixels[(k+n)]) + Math.abs(rnd - pixels[(k-n)-4]) + Math.abs(rnd - pixels[(k-n)+4]) + Math.abs(rnd - pixels[(k+n)-4]) + Math.abs(rnd - pixels[(k+n)+4]);
+	    if (neighbor_filtr==4) {old_delta_r = Math.abs(pixels[k]-pixels[(k-4)]) + Math.abs(pixels[k]-pixels[(k+4)]) + Math.abs(pixels[k]-pixels[(k-n)]) + Math.abs(pixels[k]-pixels[(k+n)]);
+	    } else old_delta_r = Math.abs(pixels[k]-pixels[(k-4)]) + Math.abs(pixels[k]-pixels[(k+4)]) + Math.abs(pixels[k]-pixels[(k-n)]) + Math.abs(pixels[k]-pixels[(k+n)]) + Math.abs(pixels[k]-pixels[(k-n)-4])+ Math.abs(pixels[k]-pixels[(k-n)+4])+ Math.abs(pixels[k]-pixels[(k+n)-4])+ Math.abs(pixels[k]-pixels[(k+n)+4]);
+	    rnd = pixels[k] + one; 
+		
+		if (neighbor_filtr==4) {new_delta_r = Math.abs(rnd-pixels[(k-4)]) + Math.abs(rnd-pixels[(k+4)]) + Math.abs(rnd-pixels[(k-n)]) + Math.abs(rnd - pixels[(k+n)]);
+		} else new_delta_r = Math.abs(rnd-pixels[(k-4)]) + Math.abs(rnd-pixels[(k+4)]) + Math.abs(rnd-pixels[(k-n)]) + Math.abs(rnd - pixels[(k+n)]) + Math.abs(rnd - pixels[(k-n)-4]) + Math.abs(rnd - pixels[(k-n)+4]) + Math.abs(rnd - pixels[(k+n)-4]) + Math.abs(rnd - pixels[(k+n)+4]);
+		
 		if(new_delta_r < old_delta_r) {pixels_new[k] = rnd} else  {
 		                                                             pixels_new[k] = pixels[k];
 																	 break;
@@ -1166,8 +1478,8 @@ var new_filtr_pepper = function (imageData, number, elem) {
 
 
 <script>
-// ----- ФУНКЦИЯ ФИЛЬТРАЦИИ 3 ТИПА "GRAY" на 8 ячеек ------
-var new_filtr_gray = function (imageData, number, elem) {
+// ----- ФУНКЦИЯ ФИЛЬТРАЦИИ 3 ТИПА "GRAY" на 4/8 ячеек ------
+var new_filtr_gray = function (imageData, number, elem, neighbor_filtr) {
 // получаем одномерный массив, описывающий все пиксели изображения
    var pixels = imageData.data;
    var pixels_new = pixels;
@@ -1182,9 +1494,13 @@ var new_filtr_gray = function (imageData, number, elem) {
 	   if (one == 0) one = -1;
 	 
     //Определение суммы отклонения значения пикселя от значений его соседей
-	    old_delta_r = Math.abs(pixels[k]-pixels[(k-4)]) + Math.abs(pixels[k]-pixels[(k+4)]) + Math.abs(pixels[k]-pixels[(k-n)]) + Math.abs(pixels[k]-pixels[(k+n)]) + Math.abs(pixels[k]-pixels[(k-n)-4])+ Math.abs(pixels[k]-pixels[(k-n)+4])+ Math.abs(pixels[k]-pixels[(k+n)-4])+ Math.abs(pixels[k]-pixels[(k+n)+4]);
-		rnd = pixels[k] + one; 
-		new_delta_r = Math.abs(rnd-pixels[(k-4)]) + Math.abs(rnd-pixels[(k+4)]) + Math.abs(rnd-pixels[(k-n)]) + Math.abs(rnd - pixels[(k+n)]) + Math.abs(rnd - pixels[(k-n)-4]) + Math.abs(rnd - pixels[(k-n)+4]) + Math.abs(rnd - pixels[(k+n)-4]) + Math.abs(rnd - pixels[(k+n)+4]);
+	    if (neighbor_filtr==4) {old_delta_r = Math.abs(pixels[k]-pixels[(k-4)]) + Math.abs(pixels[k]-pixels[(k+4)]) + Math.abs(pixels[k]-pixels[(k-n)]) + Math.abs(pixels[k]-pixels[(k+n)]);
+	    } else old_delta_r = Math.abs(pixels[k]-pixels[(k-4)]) + Math.abs(pixels[k]-pixels[(k+4)]) + Math.abs(pixels[k]-pixels[(k-n)]) + Math.abs(pixels[k]-pixels[(k+n)]) + Math.abs(pixels[k]-pixels[(k-n)-4])+ Math.abs(pixels[k]-pixels[(k-n)+4])+ Math.abs(pixels[k]-pixels[(k+n)-4])+ Math.abs(pixels[k]-pixels[(k+n)+4]);
+	    rnd = pixels[k] + one; 
+		
+		if (neighbor_filtr==4) {new_delta_r = Math.abs(rnd-pixels[(k-4)]) + Math.abs(rnd-pixels[(k+4)]) + Math.abs(rnd-pixels[(k-n)]) + Math.abs(rnd - pixels[(k+n)]);
+		} else new_delta_r = Math.abs(rnd-pixels[(k-4)]) + Math.abs(rnd-pixels[(k+4)]) + Math.abs(rnd-pixels[(k-n)]) + Math.abs(rnd - pixels[(k+n)]) + Math.abs(rnd - pixels[(k-n)-4]) + Math.abs(rnd - pixels[(k-n)+4]) + Math.abs(rnd - pixels[(k+n)-4]) + Math.abs(rnd - pixels[(k+n)+4]);
+		
 		if(new_delta_r < old_delta_r) {pixels_new[k] = rnd} else  {
 		                                                             pixels_new[k] = pixels[k];
 																	 //break;
@@ -1232,6 +1548,128 @@ var new_filtr_gray = function (imageData, number, elem) {
   return imageData_2;
 };
 </script>
+
+<script>
+// ----- ФУНКЦИЯ ФИЛЬТРАЦИИ ТИПА "МНКР+" на 4/8 ячеек ------
+var new_filtr_smooth = function (origin_image, number, elem, number_pix, sign_filtr, neighbor_filtr) {
+// получаем одномерный массив, описывающий все пиксели изображения
+
+   var pixels = window.origin_image.data;
+   pixels_len = pixels.length;
+   pixels_new = pixels.slice(0, pixels_len);
+   
+//*   var pixels_new = pixels;
+   var n = window.original_width*4;
+//   alert(n);
+   //alert(window.original_width);
+   //alert(window.original_height);
+   //alert(pixels.length);
+//   alert(number_pix);
+//   let imageData_2 = imageData;
+   let imageData_2 = window.origin_image;
+   amplituda = number;
+   
+   number_iterations = 1000000*number_pix;
+//   amplituda = 20;
+
+  for ( i = 0; i < number_iterations; i += 1)     {
+     k = Math.round(Math.random()*pixels.length); 
+	 k = k - (k%4);
+	// alert(k); // позиция для замещения
+	 if ( (k>n) && (k<(pixels.length - n)) && (((k+1)%n)!=0) && ((k%n)!=0) ) {
+	    if (sign_filtr == -1) {one = -1;
+		   }  else if (sign_filtr == 1) {one = 1;
+		      }  else {one = Math.round(Math.random());
+	                     if (one == 0) one = -1;
+	                   }
+     
+	 //   one = -1;
+		// на какое значение будет изменяться пиксель;
+	    random_ampl = Math.round(Math.random()*amplituda)*one;
+	//	alert(random_ampl); // Значение случайной амплитуды
+		
+    //Определение суммы отклонения значения пикселя от значений его соседей
+	//8    old_delta_r = Math.abs(pixels[k]-pixels[(k-4)]) + Math.abs(pixels[k]-pixels[(k+4)]) + Math.abs(pixels[k]-pixels[(k-n)]) + Math.abs(pixels[k]-pixels[(k+n)]) + Math.abs(pixels[k]-pixels[(k-n)-4])+ Math.abs(pixels[k]-pixels[(k-n)+4])+ Math.abs(pixels[k]-pixels[(k+n)-4])+ Math.abs(pixels[k]-pixels[(k+n)+4]);
+	//8	rnd = pixels[k] + random_; 
+	//8	new_delta_r = Math.abs(rnd-pixels[(k-4)]) + Math.abs(rnd-pixels[(k+4)]) + Math.abs(rnd-pixels[(k-n)]) + Math.abs(rnd - pixels[(k+n)]) + Math.abs(rnd - pixels[(k-n)-4]) + Math.abs(rnd - pixels[(k-n)+4]) + Math.abs(rnd - pixels[(k+n)-4]) + Math.abs(rnd - pixels[(k+n)+4]);
+	
+	//4    delta_1 = Math.abs(pixels_new[k]-pixels_new[(k-4)]) + Math.abs(pixels_new[k]-pixels_new[(k+4)]) + Math.abs(pixels_new[k]-pixels_new[(k-n)]) + Math.abs(pixels_new[k]-pixels_new[(k+n)]);
+	//4    delta_1 = Math.pow(pixels_new[k]-pixels_new[(k-4)],2) + Math.pow(pixels_new[k]-pixels_new[(k+4)],2) + Math.pow(pixels_new[k]-pixels_new[(k-n)],2) + Math.pow(pixels_new[k]-pixels_new[(k+n)],2);
+	
+	if (neighbor_filtr==4) {delta_1 = Math.abs(pixels_new[k]-pixels_new[(k-4)]) + Math.abs(pixels_new[k]-pixels_new[(k+4)]) + Math.abs(pixels_new[k]-pixels_new[(k-n)]) + Math.abs(pixels_new[k]-pixels_new[(k+n)]);
+	    } else delta_1 = Math.abs(pixels_new[k]-pixels_new[(k-4)]) + Math.abs(pixels_new[k]-pixels_new[(k+4)]) + Math.abs(pixels_new[k]-pixels_new[(k-n)]) + Math.abs(pixels_new[k]-pixels_new[(k+n)]) + Math.abs(pixels[k]-pixels[(k-n)-4])+ Math.abs(pixels[k]-pixels[(k-n)+4])+ Math.abs(pixels[k]-pixels[(k+n)-4])+ Math.abs(pixels[k]-pixels[(k+n)+4]);
+	      
+	
+		if ((pixels_new[k] + random_ampl - pixels[k]) > - amplituda) pixels_new[k] = pixels_new[k] + random_ampl;
+		
+	//4	delta_2 = Math.abs(pixels_new[k] - pixels_new[(k-4)]) + Math.abs(pixels_new[k] - pixels_new[(k+4)]) + Math.abs(pixels_new[k] - pixels_new[(k-n)]) + Math.abs(pixels_new[k] - pixels_new[(k+n)]);
+	//4 delta_2 = Math.pow(pixels_new[k] - pixels_new[(k-4)],2) + Math.pow(pixels_new[k] - pixels_new[(k+4)],2) + Math.pow(pixels_new[k] - pixels_new[(k-n)],2) + Math.pow(pixels_new[k] - pixels_new[(k+n)],2);
+	if (neighbor_filtr==4) {delta_2 = Math.abs(pixels_new[k] - pixels_new[(k-4)]) + Math.abs(pixels_new[k] - pixels_new[(k+4)]) + Math.abs(pixels_new[k] - pixels_new[(k-n)]) + Math.abs(pixels_new[k] - pixels_new[(k+n)]);
+        } else delta_2 = Math.abs(pixels_new[k] - pixels_new[(k-4)]) + Math.abs(pixels_new[k] - pixels_new[(k+4)]) + Math.abs(pixels_new[k] - pixels_new[(k-n)]) + Math.abs(pixels_new[k] - pixels_new[(k+n)]) + Math.abs(pixels[k]-pixels[(k-n)-4])+ Math.abs(pixels[k]-pixels[(k-n)+4])+ Math.abs(pixels[k]-pixels[(k+n)-4])+ Math.abs(pixels[k]-pixels[(k+n)+4]);
+	      
+		    if (delta_1 < delta_2) pixels_new[k] = pixels_new[k] - random_ampl;
+			
+			if(pixels_new[k]<0) pixels_new[k] = 0;
+			
+		
+	
+		
+	/*	old_delta_g = Math.abs(pixels[k+1]-pixels[(k-4)+1]) + Math.abs(pixels[k+1]-pixels[(k+4)+1]) + Math.abs(pixels[k+1]-pixels[(k-n)+1]) + Math.abs(pixels[k+1]-pixels[(k+n)+1]);
+		rnd = pixels[k+1] + one; 
+		new_delta_g = Math.abs(rnd-pixels[(k-4)+1]) + Math.abs(rnd-pixels[(k+4)+1]) + Math.abs(rnd-pixels[(k-n)+1]) + Math.abs(rnd-pixels[(k+n)+1]);
+		if(new_delta_g < old_delta_g) {pixels_new[k+1] = rnd} else {pixels_new[k+1] = pixels[k+1]};
+		
+		
+		old_delta_b = Math.abs(pixels[k+2]-pixels[(k-4)+2]) + Math.abs(pixels[k+2]-pixels[(k+4)+2]) + Math.abs(pixels[k+2]-pixels[(k-n)+2]) + Math.abs(pixels[k+2]-pixels[(k+n)+2]);
+		rnd = pixels[k+2] + one; 
+		new_delta_b = Math.abs(rnd-pixels[(k-4)+2]) + Math.abs(rnd-pixels[(k+4)+2]) + Math.abs(rnd-pixels[(k-n)+2]) + Math.abs(rnd-pixels[(k+n)+2]);
+		if(new_delta_b < old_delta_b) {pixels_new[k+2] = rnd} else {pixels_new[k+2] =pixels[k+2]};
+		
+		
+		old_delta_a = Math.abs(pixels[k+3]-pixels[(k-4)+3]) + Math.abs(pixels[k+3]-pixels[(k+4)+3]) + Math.abs(pixels[k+3]-pixels[(k-n)+3]) + Math.abs(pixels[k+3]-pixels[(k+n)+3]);
+		rnd = pixels[k+3] + one; 
+		new_delta_a = Math.abs(rnd-pixels[(k-4)+3]) + Math.abs(rnd-pixels[(k+4)+3]) + Math.abs(rnd-pixels[(k-n)+3]) + Math.abs(rnd-pixels[(k+n)+3]);
+		if(new_delta_a < old_delta_a) {pixels_new[k+3] = rnd} else {pixels_new[k+3] = pixels[k+3]};	    */
+		
+	} else {
+	    pixels_new[k]   = [0];
+	    pixels_new[k+1] = [0];
+	    pixels_new[k+2] = [0];
+	    pixels_new[k+3] = [100];
+	  }
+	  
+	 // avg = 0.3  * pixels_new[k] + 0.59 * pixels_new[k+1] + 0.11 * pixels_new[k+2];
+	 //   avg = pixels_new[k];
+	 //   imageData_2.data[k]   = avg;
+	 //   imageData_2.data[k+1] = avg;
+	 //   imageData_2.data[k+2] = avg;
+		
+		
+		
+		
+//	    imageData_2.data[k]   = pixels[k];
+//	    imageData_2.data[k+1] = pixels[k+1];
+//	    imageData_2.data[k+2] = pixels[k+2];
+//	    imageData_2.data[k+3] = pixels_new[k+3];
+		
+//		imageData_2.data[k-3] = pixels_new[k-3];
+        
+	//*	
+	  avg = pixels_new[k];
+	  imageData_2.data[k]   = avg;
+	  imageData_2.data[k+1] = avg;
+	  imageData_2.data[k+2] = avg;
+	  imageData_2.data[k+3] = pixels_new[k+3];
+    //*   
+  }
+    //width = Math.round((k*100)/number_iterations);
+	width = 100;
+    elem.style.width = width + "%"; 
+    elem.innerHTML = width  + "%";
+  return imageData_2;
+};
+</script>
+
 
 <!-- ************** РАЗЛИЧНЫЕ ФУНКЦИИ ****************** -->
 <script>
