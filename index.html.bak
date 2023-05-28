@@ -9,21 +9,21 @@
 <body>
 <div id="wrapper">
     <div id="header">
-        <h1>Image processing</h1>
+        <h1>Image Processing</h1>
     </div>
     
 	<div id="menu">
        <ul>
-         <li><a href="#">Головна</a></li>
-         <li><a href="html/ind_1.html">Інструкція</a></li>
-         <li><a href="html/ind_2.html">Різновиди фільтрації</a></li>
-         <li><a href="html/ind_3.html">Новий метод фільтрації</a></li>
-         <li><a href="html/ind_4.html">Контакти</a></li>
+         <li><a href="#">Home</a></li>
+         <li><a href="html/ind_1.html">Instruction</a></li>
+         <li><a href="html/ind_2.html">Types of Filtration</a></li>
+         <li><a href="html/ind_3.html">New Filtering Method</a></li>
+         <li><a href="html/ind_4.html">Contacts</a></li>
          </ul>
     </div>
 	
     <div id="text">
-        <p>Вибрати фотографію </p>
+        <p>Select Photo </p>
     </div>
 <!-- Загрузка оригинального фото -->
     <div>
@@ -50,7 +50,7 @@
 	    <div id="sidebarL">
 	
           <div id="text">
-            <p>Зашумлення зображення </p>
+            <p>Image in Noise </p>
           </div>
 	
         <!--Первый canvas-->
@@ -59,9 +59,9 @@
 	      </div>
 	
           <div style_="float: left">
-            <button id="reset">"Очистити"</button>
+            <button id="reset">"Clear Image"</button>
 		    <div class="clear_"> </div>
-		    <button id="sepia" >"Сепія"</button>
+		    <button id="sepia" >"Sepia"</button>
             <div id="buttons"></div>
           </div>
 	
@@ -86,7 +86,7 @@
 	
 	
 	<div id="text">
-        <p>Фільтрація зображення з шумом типу "Сіль" </p>
+        <p>Salt Noise Image Filtering </p>
     </div>
 	
 <!--Второй canvas-->	
@@ -96,33 +96,33 @@
 	
 <!--Кнопки очистки вторго полотна, загрузки фото из первого полотна, реализация Медианной фильтрации 1,  реализация Медианной фильтрации 2 и НОВОЙ фильтрации-->		
 	<div style="float: left"  >
-	   <button id="reset_canv2">Очистити</button> 
-	   <button id="img_upload2">Завантажити</button>
+	   <button id="reset_canv2">Clear Image</button> 
+	   <button id="img_upload2">Download</button>
        <div class="clear"> </div>	
 	   <div>  .</div>
-	   <button id="med_filtration_1_salt" >Медіанний фільтр "4"</button>
+	   <button id="med_filtration_1_salt" >Median filter "4"</button>
 	   <div class="clear"> </div>	
-	   <button id="med_filtration_2_salt">Медіанний фільтр "8"</button>
+	   <button id="med_filtration_2_salt">Median filter "8"</button>
 	   <div class="clear"> </div>	   
 	   
 	   <form name="forma1">
-			<input type="button" name="button" value="МНКР 1" onClick="basenew_filtr_1_salt(forma1);">
+			<input type="button" name="button" value="MLFD 1" onClick="basenew_filtr_1_salt(forma1);">
 			<input type="text" name="num_pix_11" placeholder="1...255" size="5"><br>
 			
-			<input type="button" name="button" value="МНКР 3" onClick="basenew_filtr_2_salt(forma1);">
+			<input type="button" name="button" value="MLFD 3" onClick="basenew_filtr_2_salt(forma1);">
 			<input type="text" name="num_pix_21" placeholder="1...255" size="5"><br>
 			
-			<b>Кількість сусідніх пікселів фільтрації:</b>
+			<b>The Number of Adjacent Filter Pixels:</b>
 			<input name="neighbor" type="radio" value="4" > 4
             <input name="neighbor" type="radio" value="8"checked> 8
-			<br><b>для МНКР</b>
+			<br><b>for a new filtering method</b>
 			
 	  </form>
 	  
 	 <!-- Форма визуализации эффективности  --> 
 	 <div id="text_progress_5">
         <form name="forma_effect_salt">
-			Ефективність фільтрації <br> <input type="text" name="result_1" size="8">
+			Filtration Efficiency <br> <input type="text" name="result_1" size="8">
 		</form>
 	 </div>
 	 
@@ -145,7 +145,7 @@
 	<div class="clear"> </div>
 	
 	<div id="text">
-        <p>Фільтрація зображення з шумом типу "Перець" </p>
+        <p>Pepper Noise Image Filtering  </p>
     </div>
 	
 	<!--Третій canvas-->	
@@ -155,36 +155,36 @@
 	
 <!--Кнопки очистки третьего полотна, загрузки фото из первого полотна, реализация Медианной фильтрации 1,  реализация Медианной фильтрации 2 и НОВОЙ фильтрации-->		
 	<div style="float: left"  >
-	   <button id="reset_canv3">Очистити</button> 
-	   <button id="img_upload3">Завантажити</button>
+	   <button id="reset_canv3">Clear Image</button> 
+	   <button id="img_upload3">Download</button>
        <div class="clear"> </div>	
 	   <div>  .</div>
-	   <button id="med_filtration_1_pepper" >Медіанний фільтр "4"</button>
+	   <button id="med_filtration_1_pepper" >Median filter "4"</button>
 	   <div class="clear"> </div>	
-	   <button id="med_filtration_2_pepper">Медіанний фільтр "8"</button>
+	   <button id="med_filtration_2_pepper">Median filter "8"</button>
 	   <div class="clear"> </div>
 <!--	   <button id="new_filtr">NEW_filtr</button>
 	   <input type="text" name="num_pix" size="20">	
 -->		   
 	   <form name="forma2">
-			<input type="button" name="button" value="МНКР 1" onClick="basenew_filtr_1_pepper(forma2);">
+			<input type="button" name="button" value="MLFD 1" onClick="basenew_filtr_1_pepper(forma2);">
 			<input type="text" name="num_pix_12" placeholder="1...255" size="5"><br>
 			
 			
-			<input type="button" name="button" value="МНКР 3" onClick="basenew_filtr_2_pepper(forma2);">
+			<input type="button" name="button" value="MLFD 3" onClick="basenew_filtr_2_pepper(forma2);">
 			<input type="text" name="num_pix_22" placeholder="1...255" size="5"><br>
 			
-			<b>Кількість сусідніх пікселів фільтрації:</b>
+			<b>The Number of Adjacent Filter Pixels:</b>
 			<input name="neighbor" type="radio" value="4" > 4
             <input name="neighbor" type="radio" value="8"checked> 8
-			<br><b>для МНКР</b>
+			<br><b>for a new filtering method</b>
 			
 	  </form>
 	 
 <!-- Форма визуализации эффективности  --> 
 	 <div id="text_progress_5">
         <form name="forma_effect_pepper">
-			Ефективність фільтрації <br> <input type="text" name="result_2" size="8">
+			Filtration Efficiency <br> <input type="text" name="result_2" size="8">
 		</form>
 	 </div>
 	 
@@ -203,7 +203,7 @@
 	<div class="clear"> </div>
 	
 <div id="text">
-        <p>Фільтрація зображення з шумом типу "Градації сірого" </p>
+        <p>"Gray gradations" Image Filtering </p>
     </div>
 	
 	<!--Четвертий canvas-->	
@@ -213,30 +213,30 @@
 	
 <!--Кнопки очистки третьего полотна, загрузки фото из первого полотна, реализация Медианной фильтрации 1,  реализация Медианной фильтрации 2 и НОВОЙ фильтрации-->		
 	<div style="float: left"  >
-	   <button id="reset_canv4">Очистити</button> 
-	   <button id="img_upload4">Завантажити</button>
+	   <button id="reset_canv4">Clear Image</button> 
+	   <button id="img_upload4">Download</button>
        <div class="clear"> </div>	
 	   <div>  .</div>
-	   <button id="med_filtration_1_gray" >Медіанний фільтр "4"</button>
+	   <button id="med_filtration_1_gray" >Median filter "4"</button>
 	   <div class="clear"> </div>	
-	   <button id="med_filtration_2_gray">Медіанний фільтр "8"</button>
+	   <button id="med_filtration_2_gray">Median filter "8"</button>
 	   <div class="clear"> </div>
 <!--	   <button id="new_filtr">NEW_filtr</button>
 	   <input type="text" name="num_pix" size="20">	
 -->		   
 	   
 	   <form name="forma3">
-			<input type="button" name="button" value="МНКР 1" onClick="basenew_filtr_1_gray(forma3);">
+			<input type="button" name="button" value="MLFD 1" onClick="basenew_filtr_1_gray(forma3);">
 			<input type="text" name="num_pix_13" placeholder="1...500" size="5"><br>
 				
-			<input type="button" name="button" value="МНКР 3" onClick="basenew_filtr_2_grayy(forma3);">
+			<input type="button" name="button" value="MLFD 3" onClick="basenew_filtr_2_grayy(forma3);">
 			<input type="text" name="num_pix_23" placeholder="1...500" size="5"><br>
 			
 			
-			<b>Кількість сусідніх пікселів фільтрації:</b>
+			<b>The Number of Adjacent Filter Pixels:</b>
 			<input name="neighbor" type="radio" value="4" > 4
             <input name="neighbor" type="radio" value="8"checked> 8
-			<br><b>для МНКР</b>
+			<br><b>for a new filtering method</b>
 			
 			
 	  </form>
@@ -244,7 +244,7 @@
 	  <!-- Форма визуализации эффективности  --> 
 	 <div id="text_progress_5">
         <form name="forma_effect_gray">
-			Ефективність фільтрації <br> <input type="text" name="result_3" size="8">
+			Filtration Efficiency <br> <input type="text" name="result_3" size="8">
 		</form>
 	 </div>
 	 
@@ -263,7 +263,7 @@
 	<div class="clear"> </div>
 	
 	<div id="text">
-        <p>Фільтрація зображення з адитивним Гаусовим шумом </p>
+        <p>Image Filtering With Additive Gaussian Noise </p>
     </div>
 	
 	<!--Пятий canvas-->	
@@ -273,24 +273,24 @@
 	
 <!--Кнопки очистки полотна, загрузки фото из первого полотна, реализация Медианной фильтрации 1,  реализация Медианной фильтрации 2 и НОВОЙ фильтрации-->		
 	<div style="float: left"  >
-	   <button id="reset_canv5">Очистити</button> 
-	   <button id="img_upload5">Завантажити</button>
+	   <button id="reset_canv5">Clear Image</button> 
+	   <button id="img_upload5">Download</button>
        <div class="clear"> </div>	
 	   <div>  .</div>
-	   <button id="med_filtration_1_smooth" >Медіанний фільтр "4"</button>
+	   <button id="med_filtration_1_smooth" >Median filter "4"</button>
 	   <div class="clear"> </div>	
-	   <button id="med_filtration_2_smooth">Медіанний фільтр "8"</button>
+	   <button id="med_filtration_2_smooth">Median filter "8"</button>
 	   <div class="clear"> </div>   
 	   
 	   <form  name="forma5">
-			<input type="button" name="button" value="ММНКР" onClick="basenew_filtr_smooth(forma5);">
+			<input type="button" name="button" value="MMLFD" onClick="basenew_filtr_smooth(forma5);">
 			<input type="text" name="amplitude" placeholder="Amplitude: -255...255" size="15">
 			<br><br>
-			<b>Кількість сусідніх пікселів фільтрації:</b>
+			<b>The Number of Adjacent Filter Pixels:</b>
 			<input name="neighbor" type="radio" value="4" > 4
             <input name="neighbor" type="radio" value="8"checked> 8
 			<br><br>
-			<b>Глибина фільтрації (обрати зі списку):</b>
+			<b>Depth of filtration (select from the list):</b>
         <select  name="num_pix_5"  >
           <option disabled>Level filtration</option>
           <option value="1">1</option>
@@ -309,7 +309,7 @@
 		  <option value="14">14</option>
 		  <option value="15">15</option>
         </select>
-      <br><br><b>Знак фільтрації:
+      <br><br><b>Filtration sign:
 	        <input name="sign" type="radio" value="-1" checked> "-"
             <input name="sign" type="radio" value="1"> "+"
 			<input name="sign" type="radio" value="0"> "+/-" </b>
@@ -399,7 +399,7 @@
 // noise Зашумление ЦВЕТНОГО фото
     var manipulators = [
         {
-            name: '"Шум" (0 - 100%)', 
+            name: '"Noise" (0 - 100%)', 
             cb: function(r, g, b, a, factor) {
                 var rand =  (0.5 - Math.random()) * factor*20;
                 return [r + rand, g + rand, b + rand, 255];
@@ -412,7 +412,7 @@
 	// new salt Зашумление ч/б фото БЕЛЫМИ пикселями
 	var manipulators_white = [   
         {   
-            name: '"Сіль" (0 - 100%)', 
+            name: '"Salt" (0 - 100%)', 
             cb: function(r, g, b, a, factor) {
 			     var avg = 0.3  * r + 0.59 * g + 0.11 * b;
 				 if(Math.random()>(1- factor/100))
@@ -430,7 +430,7 @@
 	// new pepper Зашумление  ч/б фото ЧЕРНЫМИ пикселями
 	var manipulators_black = [
         {   
-            name: '"Перець" (0 - 100%)', 
+            name: '"Pepper" (0 - 100%)', 
             cb: function(r, g, b, a, factor) {
 			     var avg = 0.3  * r + 0.59 * g + 0.11 * b;
 				 if(Math.random()>(1- factor/100))
@@ -448,7 +448,7 @@
     // new gray Зашумление  ч/б фото СЕРЫМИ пикселями
 	var manipulators_gray = [
         {
-            name: '"Градації сірого" (0 - 100%)',			
+            name: '"Gray Scaling" (0 - 100%)',			
             cb: function(r, g, b, a, factor) {
 			    var avg = 0.3  * r + 0.59 * g + 0.11 * b;
 				if(Math.random()>(1- factor/100)) 

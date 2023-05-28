@@ -11,57 +11,56 @@
 <body>
 <div id="wrapper">
     <div id="header">
-        <h1>Обробка зображення </h1>
+        <h1>Image Processing </h1>
     </div>
     
 	<div id="menu">
        <ul>
-         <li><a href="../index.html">Головна</a></li>
-         <li><a href="ind_1.html">Інструкція</a></li>
-         <li><a href="ind_2.html">Різновиди фільтрації</a></li>
-         <li><a href="ind_3.html">Новий метод фільтрації</a></li>
-         <li><a href="ind_4.html">Контакти</a></li>
+         <li><a href="../index.html">Home</a></li>
+         <li><a href="ind_1.html">Instruction</a></li>
+         <li><a href="ind_2.html">Types of Filtration</a></li>
+         <li><a href="ind_3.html">New Filtering Method</a></li>
+         <li><a href="ind_4.html">Contacts</a></li>
          </ul>
 	   
     </div>
 	<div id="wrapper_menu">
    <div id="text_menu">   
-     <h3> Класифікація видів фільтрації </h3>
+     <h3> Classification of types of filtration </h3>
    </div> 
    
    <div id="text_">   
-	 <p> <b>Всі види фільтрів можна розділити  </b> на такі класи:
-	 частотні, лінійні, нелінійні, комбіновані При цифровій обробці сигналів широко
-	 використовуються методи лінійної фільтрації. Однак, лінійна фільтрація демонструє
-	 хороші результати лише в разі наявності гаусівського адитивного шуму. У випадку <b>імпульсного шуму</b>
-	 ефективніше працюють методи нелінійної фільтрації, зокрема медіанна та рангова фільтрація. 
-	 У випадку комбінованого шуму послідовно застосовують лінійні і нелінійні фільтри,
-	 або комбінацію цих фільтрів для посилення їх позитивних властивостей.</p>
+	 <p> <b> All types of filters can be divided </b> into the following classes:
+frequency, linear, nonlinear, combined. In digital signal processing widely
+linear filtration methods are used. However, linear filtering demonstrates
+good results only in the presence of Gaussian additive noise. In the case of <b> impulse noise </b>
+nonlinear filtering methods, in particular median and rank filtering, work more effectively.
+In the case of combined noise, linear and nonlinear filters are used sequentially,
+or a combination of these filters to enhance their positive properties. </p>
 	 
-	 <p><b>Гаусівська фільтрація.</b>  Найпростіша ідея видалення шуму – усереднення значення пікселів
-	 у просторовій околиці. Найпростіший варіант фільтрації полягає в присвоєнні центральному 
-	 пікселю нового значення як середньоарифметичного всіх його сусідів, значення яких відрізняються 
-	 від значення центрального не більше ніж на деякий поріг.</p>
+	 <p> <b> Gaussian filtering. </b> The simplest idea to remove noise is to average the pixels 
+	 in the surrounding area. The simplest option for filtering is to assign a central one
+pixel of the new value as the arithmetic mean of all its neighbors, the values of which 
+differ from the central value by no more than a certain threshold. </p>
 	 
-	 <p><b>Медіанна фільтрація. </b> Це стандартний спосіб зменшення імпульсного шуму.
-	 Для кожного пікселя в деякій околиці (вікні) знаходиться медіанне значення і присвоюється тому пікселю,
-	 який обробляється. Визначення медіанного значення: якщо масив пікселів відсортувати по їхньому значенню, 
-	 медіаною буде середній елемент цього масиву.</p>
+	 <p> <b> Median filtering. </b> This is the standard way to reduce impulse noise.
+For each pixel in a certain neighborhood (window) is the median value and is assigned 
+to the pixel that is processed. Determining the median value: If you sort an array of pixels 
+by their value, the median will be the middle element of that array. </p>
 	 
-	 <p><b>Вінерівська фільтрація </b>  – це фільтрація методом мінімізації середнього квадратичного відхилення.
-	 Метод заснований на розгляді зображення й шуму, як випадкових процесів, і завдання ставиться в такий спосіб, 
-	 щоб знайти таку оцінку значення параметрів пікселів для відфільтрованого зображення,
-	 для якої середнє квадратичне відхилення було б мінімальним.</p>
-   </div>
+	 <p> <b> Wiener filtering </b> is filtering by minimizing the standard deviation.
+The method is based on the consideration of images and noise as random processes, and the task is set as follows,
+to find an estimate of the pixel parameters for the filtered image for which the standard deviation would be minimal. </p>
+    </div>
    
-	<div id="text_">   
-	 <p> Наведений аналіз класичних методів фільтрації, такі як медіанний фільтр, фільтр Гауса, фільтр Вінера,
-	 які використовуються у відомих сучасних програмних пакетах обробки зображень, часто не мають задовільної 
-	 ефективності при обробці конкретних типів шумів та часто призводять до часткової втрати корисного сигналу.</p>
+	<div id = "text _">
+<p> The analysis of classical filtering methods, such as median filter, 
+Gauss filter, Wiener filter, used in well-known modern image processing software packages, 
+often do not have satisfactory efficiency in processing specific types of noise and often lead to partial loss of useful signal. / p>
 	 
-	 <p> Тому <b>головною задачею даної роботи є розробка, програмування та аналіз нового авторського методу фільтрації</b>, 
-	 який покращує результати відновлення даних у порівнянні з вже існуючими підходами, створення <b>онлайн-сервісу</b> 
-	 обробки зображень при впливі імпульсних шумів різних типів.</p>
+	 <p> Therefore <b> the main task of this work is to develop, program and analyze a new authoring filtering method </b>, 
+	 which improves the results of data recovery compared to existing approaches, creating a <b> online service </b>
+image processing under the influence of pulsed noise of different types. </p>
    </div> 
    
    </div>
